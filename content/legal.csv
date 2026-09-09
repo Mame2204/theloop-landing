@@ -27,35 +27,48 @@ L'utilisateur peut demander la suppression de son compte à tout moment en conta
 THE LOOP peut modifier les présentes CGU à tout moment. Les utilisateurs seront informés de toute modification substantielle via l'application.
 
 10. Droit applicable
-Les présentes CGU sont soumises au droit guinéen. Tout litige relève de la compétence des juridictions compétentes de Conakry.","2026-08-23 00:00:00.000000+00"
-"politique_confidentialite","Politique de confidentialité","1. Données collectées
-THE LOOP collecte les données suivantes lors de l'inscription et de l'utilisation de l'application : nom, prénom, numéro de téléphone, e-mail, date de naissance, ainsi que les données d'usage (favoris, avantages activés, notifications reçues, réponses aux sondages et enquêtes proposés dans l'application).
+Les présentes CGU sont soumises au droit guinéen. Tout litige relève de la compétence des juridictions compétentes de Conakry.
 
-2. Finalité du traitement
+Contact
+Site : https://www.theloop-app.com/
+E-mail : theloop.contact@gmail.com
+Téléphone : +224 626 68 06 06","2026-09-09 00:00:00.000000+00"
+"politique_confidentialite","Politique de confidentialité","1. Responsable du traitement
+THE LOOP — Conakry, Guinée.
+Site : https://www.theloop-app.com/
+Contact : theloop.contact@gmail.com · +224 626 68 06 06
+
+2. Données collectées
+THE LOOP collecte les données suivantes lors de l'inscription et de l'utilisation de l'application : nom, prénom, numéro de téléphone, e-mail, date de naissance, ainsi que les données d'usage (favoris, avantages activés, notifications reçues, réponses aux sondages et enquêtes proposés dans l'application). Sur le site web (liste d'attente), seul l'e-mail est collecté.
+
+3. Finalité du traitement
 Ces données sont utilisées exclusivement pour : la gestion du compte membre, la personnalisation des recommandations (spots, événements, outils), l'envoi de notifications (in-app et push) liées aux favoris, au PASS Prime, aux sondages et aux actualités de l'application, l'attribution des avantages partenaires, et la réalisation de sondages internes visant à mieux comprendre les préférences des membres. Les résultats de ces sondages ne sont jamais publiés de façon individuelle ou nominative ; seules des données agrégées et anonymisées (ex. pourcentages, tendances globales) peuvent être communiquées, en interne comme en externe.
 
-3. Partage des données
-Vos données ne sont ni vendues ni louées à des tiers. Elles peuvent être partagées avec un partenaire uniquement dans la mesure nécessaire à l'activation d'un avantage que vous avez vous-même sollicité (ex. présentation d'une carte membre), avec Djomy pour le traitement des paiements PASS Prime, et avec Firebase Cloud Messaging (Google) pour l'envoi technique des notifications.
+4. Paiement
+Les paiements liés au PASS Prime sont effectués par paiement mobile money. Aucune donnée de carte bancaire n'est stockée par THE LOOP.
 
-4. Conservation des données
-Vos données, y compris vos réponses aux sondages, sont conservées pendant toute la durée de votre compte actif. En cas de suppression de compte, elles sont supprimées ou anonymisées dans un délai raisonnable, sauf obligation légale de conservation.
+5. Partage des données
+Vos données ne sont ni vendues ni louées à des tiers. Elles peuvent être partagées uniquement dans la mesure nécessaire à l'activation d'un avantage que vous avez vous-même sollicité, au traitement d'un paiement mobile money, et avec le service technique d'envoi des notifications.
 
-5. Sécurité
-THE LOOP met en œuvre les mesures techniques raisonnables pour protéger vos données contre tout accès non autorisé, perte ou divulgation.
+6. Conservation des données
+Vos données, y compris vos réponses aux sondages, sont conservées pendant toute la durée de votre compte actif. En cas de suppression de compte, elles sont supprimées ou anonymisées dans un délai raisonnable, sauf obligation légale de conservation. Les e-mails de la liste d'attente sont conservés jusqu'au lancement et à la demande de retrait.
 
-6. Vos droits
-Vous pouvez à tout moment demander l'accès, la rectification ou la suppression de vos données personnelles, y compris vos réponses à des sondages, en écrivant à contact@theloop.gn.
+7. Sécurité
+THE LOOP met en œuvre les mesures techniques raisonnables pour protéger vos données contre tout accès non autorisé, perte ou divulgation. Transit HTTPS. Table liste d'attente : règles d'accès limitées, insertion publique seulement.
 
-7. Authentification
-La connexion à l'application se fait par code de vérification (OTP) envoyé par SMS, sans stockage de mot de passe.","2026-08-23 00:00:00.000000+00"
+8. Vos droits
+Vous pouvez à tout moment demander l'accès, la rectification ou la suppression de vos données personnelles, y compris vos réponses à des sondages, en écrivant à theloop.contact@gmail.com ou en appelant le +224 626 68 06 06.
+
+9. Authentification
+La connexion à l'application se fait par code de vérification (OTP) envoyé par SMS, sans stockage de mot de passe.","2026-09-09 00:00:00.000000+00"
 "conditions_pass_prime","Conditions du PASS Prime","1. Description
 Le PASS Prime est un abonnement optionnel donnant accès à des avantages exclusifs auprès des établissements partenaires de THE LOOP (accueil privilégié, offres, accès prioritaire, etc.), selon les conditions propres à chaque partenaire.
 
 2. Souscription et paiement
-Le PASS Prime est proposé sous forme d'abonnement mensuel. Le paiement s'effectue via Djomy, agrégateur de paiement mobile money opérant en Guinée.
+Le PASS Prime est proposé sous forme d'abonnement mensuel. Le paiement s'effectue par paiement mobile money.
 
 3. Renouvellement
-Le renouvellement du PASS Prime n'est pas automatique. Chaque mois, l'utilisateur doit effectuer manuellement un nouveau paiement via Djomy pour prolonger son accès aux avantages Prime. À défaut de renouvellement, l'accès Prime prend fin à l'issue de la période déjà payée.
+Le renouvellement du PASS Prime n'est pas automatique. Chaque mois, l'utilisateur doit effectuer manuellement un nouveau paiement mobile money pour prolonger son accès aux avantages Prime. À défaut de renouvellement, l'accès Prime prend fin à l'issue de la période déjà payée.
 
 4. Annulation
 Le PASS Prime étant sans renouvellement automatique, aucune procédure d'annulation n'est nécessaire : il suffit de ne pas effectuer le paiement du mois suivant pour que l'abonnement prenne fin naturellement.
@@ -67,32 +80,46 @@ Le paiement du PASS Prime étant effectué mois par mois et de façon volontaire
 Les avantages listés dans l'application sont proposés par les établissements partenaires et peuvent être modifiés, suspendus ou retirés à tout moment par THE LOOP ou par le partenaire concerné, sans que cela ouvre droit à un remboursement du PASS Prime.
 
 7. Usage personnel
-Le PASS Prime est nominatif et réservé à l'usage du membre titulaire du compte, sauf mention contraire explicite d'un avantage (ex. avantage extensible à un invité).","2026-08-23 00:00:00.000000+00"
+Le PASS Prime est nominatif et réservé à l'usage du membre titulaire du compte, sauf mention contraire explicite d'un avantage (ex. avantage extensible à un invité).
+
+Contact
+Site : https://www.theloop-app.com/
+E-mail : theloop.contact@gmail.com
+Téléphone : +224 626 68 06 06","2026-09-09 00:00:00.000000+00"
 "partner_terms","Conditions partenaires","THE LOOP se réserve le droit de retirer toute publication (événement, spot, outil) sans obligation de justification, notamment en cas de non-conformité, signalement ou décision éditoriale. Les partenaires sont informés que le contenu publié peut être désactivé à tout moment par l'équipe THE LOOP.","2026-08-15 13:40:46.146027+00"
 "politique_cookies","Politique de cookies","1. Utilisation des cookies
 Le site web de THE LOOP peut utiliser des cookies et technologies similaires pour assurer le bon fonctionnement de la plateforme, mesurer l'audience et améliorer l'expérience utilisateur.
 
 2. Types de cookies
-- Cookies strictement nécessaires : indispensables au fonctionnement du site (connexion, sécurité).
-- Cookies de mesure d'audience : [À compléter selon les outils analytics utilisés, le cas échéant]
+- Cookies strictement nécessaires : indispensables au fonctionnement du site (sécurité, préférences techniques).
+- Le site de pré-lancement n'utilise actuellement pas de cookies de mesure d'audience tiers.
 
 3. Gestion des cookies
 Vous pouvez configurer votre navigateur pour refuser les cookies non essentiels. Ce refus peut affecter certaines fonctionnalités du site.
 
 4. Contact
-Pour toute question relative à cette politique : contact@theloop.gn","2026-08-23 00:00:00.000000+00"
+Pour toute question relative à cette politique : theloop.contact@gmail.com · +224 626 68 06 06
+Site : https://www.theloop-app.com/","2026-09-09 00:00:00.000000+00"
 "mentions_legales","Mentions légales","Éditeur
 THE LOOP — application mobile de découverte et d'expériences à Conakry (Guinée), disponible sur Google Play et l'App Store. Activité actuellement exploitée à titre individuel, en cours de structuration juridique.
-Contact : contact@theloop.gn
+
+Site web : https://www.theloop-app.com/
+E-mail : theloop.contact@gmail.com
+Téléphone : +224 626 68 06 06
+
 Directeur de la publication
-[À compléter dès formalisation de la structure]
+Le responsable de la publication est l'éditeur de THE LOOP, joignable aux coordonnées ci-dessus.
+
 Hébergement
 Supabase Inc. — hébergement de la base de données et de l'authentification.
 Vercel Inc. — hébergement du site web (landing page).
 Distribution de l'application : Google Play Store (Google LLC) et Apple App Store (Apple Inc.).
+
 Paiement
-Les paiements liés au PASS Prime sont traités par Djomy, agrégateur de paiement mobile money.
+Les paiements liés au PASS Prime sont effectués par paiement mobile money.
+
 Données personnelles
-Les données collectées lors de l'inscription (nom, e-mail, téléphone, date de naissance) sont traitées par THE LOOP pour la gestion du compte membre, des favoris, notifications et avantages Loop Prime. Pour toute demande d'accès, rectification ou suppression : contact@theloop.gn
+Les données collectées lors de l'inscription (nom, e-mail, téléphone, date de naissance) sont traitées par THE LOOP pour la gestion du compte membre, des favoris, notifications et avantages Loop Prime. Pour toute demande d'accès, rectification ou suppression : theloop.contact@gmail.com ou +224 626 68 06 06.
+
 Propriété intellectuelle
-L'ensemble des contenus, marques et éléments graphiques de THE LOOP sont protégés. Toute reproduction non autorisée est interdite.","2026-08-23 00:00:00.000000+00"
+L'ensemble des contenus, marques et éléments graphiques de THE LOOP sont protégés. Toute reproduction non autorisée est interdite.","2026-09-09 00:00:00.000000+00"
