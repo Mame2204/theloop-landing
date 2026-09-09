@@ -70,6 +70,11 @@
       border-radius: 6px;
       padding: 0.28rem 0.55rem;
     }
+    .capture-shot {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+    }
     body.menu-open { overflow: hidden; }
     #mobile-panel {
       max-height: 0;
@@ -221,16 +226,17 @@
             </ul>
           </div>
 
-          <div id="apercu" class="mx-auto w-full max-w-[210px] sm:max-w-[230px] lg:mx-0 lg:max-w-[240px] lg:justify-self-end">
+          <div id="apercu" class="mx-auto w-full max-w-[220px] sm:max-w-[250px] lg:mx-0 lg:max-w-[260px] lg:justify-self-end">
             <figure>
               <div class="overflow-hidden rounded-[1.5rem] border border-line bg-white p-1.5 shadow-card">
                 <img
-                  src="assets/photos/accueil-capture.jpg?v=7"
+                  src="assets/photos/accueil-capture.jpg?v=8"
                   alt="Capture Accueil THE LOOP"
-                  class="block h-auto w-full rounded-[1.2rem]"
-                  width="720"
-                  height="1400"
+                  class="capture-shot block h-auto w-full rounded-[1.2rem]"
+                  width="944"
+                  height="2048"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <figcaption class="mt-2.5 text-center text-[11px] text-muted lg:text-right">Aperçu Accueil</figcaption>
@@ -339,34 +345,22 @@
         The Loop
       </p>
       <p class="mb-3">© 2026 THE LOOP. Tous droits réservés. Conakry, Guinée.</p>
-      <div class="mb-8 flex flex-col items-center gap-2.5 text-sm text-muted sm:flex-row sm:justify-center sm:gap-4 sm:text-xs">
+      <div class="mb-5 flex flex-col items-center gap-2.5 text-sm text-muted sm:flex-row sm:justify-center sm:gap-4 sm:text-xs">
         <a href="https://www.theloop-app.com/" class="hover:text-brand">www.theloop-app.com</a>
         <span class="hidden sm:inline">·</span>
         <a href="mailto:theloop.contact@gmail.com" class="hover:text-brand">theloop.contact@gmail.com</a>
         <span class="hidden sm:inline">·</span>
         <a href="tel:+224626680606" class="hover:text-brand">+224 626 68 06 06</a>
       </div>
-
-      <div class="mx-auto max-w-2xl rounded-2xl border border-line bg-paper/80 px-5 py-6 sm:px-8">
-        <p class="mb-1 text-xs font-semibold uppercase tracking-[0.16em] text-brand">Documents légaux</p>
-        <p class="mb-4 text-xs text-muted sm:text-[13px]">
-          Pages publiques pour l'application et les stores (Privacy Policy, Terms, Account Deletion).
-        </p>
-        <div class="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-5 sm:gap-y-2">
-          <a href="https://www.theloop-app.com/privacy" class="min-h-[44px] inline-flex items-center justify-center rounded-xl border border-line bg-white px-4 text-sm font-medium text-ink transition hover:border-brand/30 hover:text-brand">
-            Confidentialité
-          </a>
-          <a href="https://www.theloop-app.com/cgu" class="min-h-[44px] inline-flex items-center justify-center rounded-xl border border-line bg-white px-4 text-sm font-medium text-ink transition hover:border-brand/30 hover:text-brand">
-            CGU
-          </a>
-          <a href="https://www.theloop-app.com/mentions" class="min-h-[44px] inline-flex items-center justify-center rounded-xl border border-line bg-white px-4 text-sm font-medium text-ink transition hover:border-brand/30 hover:text-brand">
-            Mentions légales
-          </a>
-          <a href="https://www.theloop-app.com/suppression" class="min-h-[44px] inline-flex items-center justify-center rounded-xl border border-line bg-white px-4 text-sm font-medium text-ink transition hover:border-brand/30 hover:text-brand">
-            Suppression de compte
-          </a>
-        </div>
-      </div>
+      <nav class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-[12px] text-muted/90 sm:gap-x-4" aria-label="Documents légaux">
+        <a href="https://www.theloop-app.com/mentions" class="transition hover:text-brand">Mentions légales</a>
+        <span class="text-line" aria-hidden="true">·</span>
+        <a href="https://www.theloop-app.com/privacy" class="transition hover:text-brand">Confidentialité</a>
+        <span class="text-line" aria-hidden="true">·</span>
+        <a href="https://www.theloop-app.com/cgu" class="transition hover:text-brand">CGU</a>
+        <span class="text-line" aria-hidden="true">·</span>
+        <a href="https://www.theloop-app.com/suppression" class="transition hover:text-brand">Suppression de compte</a>
+      </nav>
     </div>
   </footer>
 
