@@ -7,6 +7,10 @@ body {
     radial-gradient(circle at -6% 10%, rgba(10, 101, 117, 0.07), transparent 40%);
   background-attachment: fixed;
   color: #0E2A30;
+  overflow-x: hidden;
+}
+@supports (padding: env(safe-area-inset-bottom)) {
+  body { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
 }
 .legal-prose {
   color: #33474C;
@@ -24,7 +28,7 @@ body {
   font-weight: 500;
 }
 #waitlist { scroll-margin-top: 7rem; }
-#concept, #features, #faq { scroll-margin-top: 5.5rem; }
+#concept, #apercu, #features, #faq { scroll-margin-top: 5.5rem; }
 .section-a { background: rgba(255, 255, 255, 0.55); }
 .section-b {
   background: rgba(10, 101, 117, 0.05);

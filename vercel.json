@@ -16,8 +16,10 @@
     { "source": "/confidentialite", "destination": "/privacy", "permanent": true },
     { "source": "/politique-de-confidentialite", "destination": "/privacy", "permanent": true },
     { "source": "/politique-confidentialite", "destination": "/privacy", "permanent": true },
+    { "source": "/privacy-policy", "destination": "/privacy", "permanent": true },
     { "source": "/conditions", "destination": "/cgu", "permanent": true },
     { "source": "/terms", "destination": "/cgu", "permanent": true },
+    { "source": "/terms-of-service", "destination": "/cgu", "permanent": true },
     { "source": "/mentions-legales", "destination": "/mentions", "permanent": true },
     { "source": "/delete-account", "destination": "/suppression", "permanent": true },
     { "source": "/account-deletion", "destination": "/suppression", "permanent": true }

@@ -17,8 +17,8 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="THE LOOP — Conakry" />
   <meta name="twitter:description" content="Rejoins le cercle THE LOOP. Liste d'attente — décembre 2026." />
-  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="/assets/site.css" />
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/site.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -48,20 +48,65 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     .feature-icon svg { stroke: currentColor; }
+    #apercu { scroll-margin-top: 5.5rem; }
+    .app-preview {
+      background:
+        radial-gradient(circle at 85% -5%, rgba(18, 168, 188, 0.18), transparent 42%),
+        #FAFAFA;
+    }
+    .app-preview-shell {
+      border-radius: 1.75rem;
+      border: 1px solid #E5E7EB;
+      box-shadow: 0 18px 40px rgba(14, 42, 48, 0.08);
+      background: #FAFAFA;
+    }
+    .badge-alaune {
+      background: #C9A84C;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      padding: 0.28rem 0.55rem;
+    }
+    body.menu-open { overflow: hidden; }
+    #mobile-panel {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      pointer-events: none;
+      transition: max-height 0.32s ease, opacity 0.22s ease;
+    }
+    #mobile-panel.is-open {
+      max-height: 28rem;
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .menu-icon-close { display: none; }
+    #menu-toggle[aria-expanded="true"] .menu-icon-open { display: none; }
+    #menu-toggle[aria-expanded="true"] .menu-icon-close { display: block; }
+    @media (min-width: 768px) {
+      #mobile-panel, #mobile-panel.is-open {
+        max-height: 0 !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+    }
   </style>
 </head>
 <body class="font-sans text-ink antialiased selection:bg-brand selection:text-white">
 
   <!-- Bannière -->
-  <div class="bg-ink text-paper text-xs sm:text-sm font-medium text-center py-2.5 px-4">
+  <div class="bg-ink text-paper text-xs sm:text-sm font-medium text-center py-2.5 px-4 pt-[max(0.625rem,env(safe-area-inset-top))]">
     THE LOOP ouvre à Conakry — Décembre 2026.
     <a href="#waitlist" class="underline decoration-brand-light decoration-2 underline-offset-2 font-semibold ml-1">Réserve ta place</a>
   </div>
 
   <!-- Header -->
   <header class="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur-xl">
-    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 sm:h-20">
-      <a href="/" class="logo-h flex items-center gap-2.5" aria-label="THE LOOP — Accueil">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8 sm:h-20">
+      <a href="/" class="logo-h flex min-w-0 items-center gap-2.5" aria-label="THE LOOP — Accueil">
         <svg class="shrink-0" width="34" height="34" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="18" cy="18" r="15" stroke="#0E2A30" stroke-width="3"/>
           <path d="M 13.5 10.21 A 9 9 0 1 1 13.5 25.79" stroke="#0E2A30" stroke-width="3" stroke-linecap="round"/>
@@ -70,10 +115,10 @@
         <span class="wm text-[14px] font-semibold uppercase leading-none tracking-[0.2em] text-ink sm:text-base">The Loop</span>
       </a>
 
-      <nav class="hidden items-center gap-8 text-sm font-medium text-body md:flex">
+      <nav class="hidden items-center gap-8 text-sm font-medium text-body md:flex" aria-label="Navigation principale">
         <a href="#concept" class="hover:text-brand transition-colors">Le concept</a>
         <a href="#features" class="hover:text-brand transition-colors">Expériences</a>
-        <a href="#faq" class="hover:text-brand transition-colors">Questions</a>
+        <a href="#faq" class="hover:text-brand transition-colors">FAQ</a>
       </nav>
 
       <div class="hidden md:block">
@@ -81,28 +126,55 @@
           Rejoindre la liste d'attente
         </a>
       </div>
+
+      <button
+        id="menu-toggle"
+        type="button"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-white text-ink shadow-sm transition hover:border-brand/30 hover:text-brand md:hidden"
+        aria-controls="mobile-panel"
+        aria-expanded="false"
+        aria-label="Ouvrir le menu"
+      >
+        <svg class="menu-icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="menu-icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-panel" class="border-t border-line bg-paper md:hidden" hidden>
+      <nav class="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6" aria-label="Navigation mobile">
+        <a href="#concept" class="mobile-link rounded-xl px-4 py-3.5 text-base font-medium text-ink transition hover:bg-brand/10 hover:text-brand">Le concept</a>
+        <a href="#features" class="mobile-link rounded-xl px-4 py-3.5 text-base font-medium text-ink transition hover:bg-brand/10 hover:text-brand">Expériences</a>
+        <a href="#faq" class="mobile-link rounded-xl px-4 py-3.5 text-base font-medium text-ink transition hover:bg-brand/10 hover:text-brand">FAQ</a>
+        <a href="#waitlist" class="mobile-link mt-2 inline-flex items-center justify-center rounded-xl bg-brand px-4 py-3.5 text-base font-semibold text-white shadow-card transition hover:bg-brand-dark">
+          Rejoindre la liste d'attente
+        </a>
+      </nav>
     </div>
   </header>
 
   <main>
     <!-- Hero -->
-    <section class="section-a relative px-4 pb-20 pt-16 sm:pt-24 sm:pb-28">
-      <div class="relative z-10 mx-auto max-w-3xl text-center">
-        <span class="mb-7 inline-flex items-center gap-2 rounded-full border border-brand/25 bg-brand/10 px-4 py-1.5 text-xs font-medium text-brand-dark">
-          Conakry - Accès sur liste d'attente, décembre 2026
+    <section class="section-a relative px-4 pb-14 pt-10 sm:px-6 sm:pb-20 sm:pt-16 lg:px-8">
+      <div class="relative z-10 mx-auto max-w-4xl text-center">
+        <span class="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-brand/25 bg-brand/10 px-3.5 py-1.5 text-[11px] font-medium leading-snug text-brand-dark sm:px-4 sm:text-xs">
+          Conakry · Liste d'attente · Décembre 2026
         </span>
-        <h1 class="mb-6 font-serif text-4xl font-medium leading-[1.1] tracking-tight text-ink sm:text-6xl">
+        <h1 class="mb-5 font-serif text-[2rem] font-medium leading-[1.14] tracking-tight text-ink sm:text-5xl lg:text-[3.35rem]">
           Les bonnes adresses de Conakry ne s'annoncent pas.
           <span class="italic text-brand">Elles se transmettent.</span>
         </h1>
-        <p class="mx-auto mb-2 max-w-xl text-lg leading-relaxed text-body">
-          THE LOOP réunit ce que Conakry a de meilleur à offrir : des spots passés au crible avant d'être partagés, un agenda qui écarte le bruit pour ne garder que ce qui vaut le détour, des parcours prêts à vivre pour une soirée ou un week-end, et des outils qui simplifient le quotidien.
+        <p class="mx-auto mb-3 max-w-3xl text-[15px] leading-relaxed text-body sm:text-lg">
+          THE LOOP réunit ce que Conakry a de meilleur : des spots passés au crible, un agenda qui écarte le bruit, des parcours prêts à vivre et des outils qui simplifient le quotidien.
         </p>
-        <p class="mx-auto mb-10 max-w-xl text-sm leading-relaxed text-muted">
-          Depuis Conakry ou depuis la diaspora, gardez une longueur d'avance sur les bonnes adresses de la ville.
+        <p class="mx-auto mb-8 max-w-2xl text-sm leading-relaxed text-muted">
+          Depuis Conakry ou depuis la diaspora — une longueur d'avance sur les bonnes adresses de la ville.
         </p>
 
-        <div id="waitlist" class="mx-auto max-w-xl rounded-2xl border border-line bg-white p-4 shadow-card sm:p-6">
+        <div id="waitlist" class="mx-auto max-w-2xl rounded-2xl border border-line bg-white p-4 shadow-card sm:p-5">
           <form id="waitlist-form" class="flex flex-col gap-3 sm:flex-row" novalidate>
             <label class="sr-only" for="email-waitlist">Adresse e-mail</label>
             <input
@@ -111,11 +183,13 @@
               type="email"
               required
               autocomplete="email"
+              inputmode="email"
+              enterkeyhint="go"
               placeholder="Entrez votre adresse e-mail..."
-              class="flex-grow rounded-xl border border-line bg-paper px-4 py-3 text-sm text-ink outline-none placeholder:text-muted focus:border-brand"
+              class="min-h-[48px] w-full flex-grow rounded-xl border border-line bg-paper px-4 py-3 text-base text-ink outline-none placeholder:text-muted focus:border-brand sm:text-sm"
             />
             <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
-            <button id="waitlist-submit" type="submit" class="shrink-0 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-brand-dark disabled:cursor-not-allowed disabled:opacity-60">
+            <button id="waitlist-submit" type="submit" class="min-h-[48px] w-full shrink-0 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-brand-dark disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto">
               Accéder en avant-première
             </button>
           </form>
@@ -125,96 +199,126 @@
       </div>
     </section>
 
-    <!-- Concept -->
-    <section id="concept" class="section-b py-20">
-      <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-        <p class="eyebrow mb-3 text-lg text-brand">Le concept</p>
-        <h2 class="mb-5 font-serif text-3xl font-medium text-ink sm:text-4xl">Le meilleur de la ville, selectionner pour vous</h2>
-        <p class="text-[15px] leading-relaxed text-body">
-          À Conakry, ce qui vaut vraiment le détour ne se trouve pas toujours en tapant une recherche ça se sait, ça se raconte, ça se transmet. THE LOOP s'inspire de cette logique : chaque spot, chaque événement et chaque outil passe au crible avant d'apparaître dans l'application. On ne cherche pas à tout référencer, ni à suivre ce qui fait déjà parler de lui, on cherche ce qui, pour nous, mérite votre temps, et qui mérite à son tour d'être transmis.
-        </p>
+    <!-- Concept + capture alignés -->
+    <section id="concept" class="section-b py-16 sm:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-10 lg:grid-cols-[1.55fr_0.85fr] lg:gap-12 xl:gap-16">
+          <div class="text-left">
+            <p class="eyebrow mb-3 text-lg text-brand">Le concept</p>
+            <h2 class="mb-5 font-serif text-3xl font-medium text-ink sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
+              Le meilleur de la ville, sélectionné pour vous
+            </h2>
+            <p class="mb-5 text-[15px] leading-relaxed text-body sm:text-base">
+              À Conakry, ce qui vaut vraiment le détour ne se trouve pas toujours en tapant une recherche — ça se sait, ça se raconte, ça se transmet. THE LOOP s'inspire de cette logique : chaque spot, chaque événement et chaque outil passe au crible avant d'apparaître dans l'application.
+            </p>
+            <p class="mb-6 text-[15px] leading-relaxed text-body sm:text-base">
+              On ne cherche pas à tout référencer, ni à suivre ce qui fait déjà parler de lui — on cherche ce qui, pour nous, mérite votre temps, et qui mérite à son tour d'être transmis.
+            </p>
+            <ul class="space-y-3 text-sm text-body sm:text-[15px]">
+              <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span><span>Une sélection éditoriale, pas un annuaire.</span></li>
+              <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span><span>Pensé pour Conakry et pour la diaspora.</span></li>
+              <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"></span><span>Spots, agenda, parcours et outils dans le même cercle.</span></li>
+            </ul>
+          </div>
+
+          <div id="apercu" class="mx-auto w-full max-w-[210px] sm:max-w-[230px] lg:mx-0 lg:max-w-[240px] lg:justify-self-end">
+            <figure>
+              <div class="overflow-hidden rounded-[1.5rem] border border-line bg-white p-1.5 shadow-card">
+                <img
+                  src="assets/photos/accueil-capture.jpg?v=7"
+                  alt="Capture Accueil THE LOOP"
+                  class="block h-auto w-full rounded-[1.2rem]"
+                  width="720"
+                  height="1400"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption class="mt-2.5 text-center text-[11px] text-muted lg:text-right">Aperçu Accueil</figcaption>
+            </figure>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Expériences -->
-    <section id="features" class="section-a py-20">
+    <section id="features" class="section-a py-20 sm:py-24">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto mb-14 max-w-2xl text-center">
-          <p class="eyebrow mb-3 text-lg text-brand">Ce que vous trouvez à l'intérieur</p>
-          <h2 class="font-serif text-3xl font-medium text-ink sm:text-4xl">Quatre façons de vivre la ville</h2>
+        <div class="mx-auto mb-14 max-w-2xl text-center sm:mb-16">
+          <p class="eyebrow mb-3 text-xl text-brand sm:text-2xl">Ce que vous trouvez à l'intérieur</p>
+          <h2 class="font-serif text-4xl font-medium text-ink sm:text-5xl">Quatre façons de vivre la ville</h2>
         </div>
 
-        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="rounded-2xl border border-line bg-white p-6 shadow-card">
-            <div class="feature-icon mb-4 text-brand">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg>
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-2xl border border-line bg-white p-7 shadow-card sm:p-8">
+            <div class="feature-icon mb-5 text-brand">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></svg>
             </div>
-            <h3 class="mb-2 text-base font-semibold text-ink">Spots</h3>
-            <p class="text-[13px] leading-relaxed text-muted">Restaurants, rooftops, adresses discrètes : chaque lieu est visité et jugé sur un seul critère vaut-il vraiment le détour ? Jamais parce qu'il fait déjà parler de lui.</p>
+            <h3 class="mb-3 text-lg font-semibold text-ink sm:text-xl">Spots</h3>
+            <p class="text-[15px] leading-relaxed text-muted">Restaurants, rooftops, adresses discrètes : chaque lieu est visité et jugé sur un seul critère — vaut-il vraiment le détour ? Jamais parce qu'il fait déjà parler de lui.</p>
           </div>
-          <div class="rounded-2xl border border-line bg-white p-6 shadow-card">
-            <div class="feature-icon mb-4 text-brand">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v3M16 3v3M4 9h16M5 6h14a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z"/><path d="M9 14l2 2 4-4"/></svg>
+          <div class="rounded-2xl border border-line bg-white p-7 shadow-card sm:p-8">
+            <div class="feature-icon mb-5 text-brand">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v3M16 3v3M4 9h16M5 6h14a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z"/><path d="M9 14l2 2 4-4"/></svg>
             </div>
-            <h3 class="mb-2 text-base font-semibold text-ink">Agenda</h3>
-            <p class="text-[13px] leading-relaxed text-muted">Soirées, concerts, rendez-vous culturels : un agenda filtrable par catégorie, où seule la valeur d'une soirée compte jamais son affluence.</p>
+            <h3 class="mb-3 text-lg font-semibold text-ink sm:text-xl">Agenda</h3>
+            <p class="text-[15px] leading-relaxed text-muted">Soirées, concerts, rendez-vous culturels : un agenda filtrable par catégorie, où seule la valeur d'une soirée compte — jamais son affluence.</p>
           </div>
-          <div class="rounded-2xl border border-line bg-white p-6 shadow-card">
-            <div class="feature-icon mb-4 text-brand">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l6-16 4 10 3-6 5 12" stroke-linejoin="round"/></svg>
+          <div class="rounded-2xl border border-line bg-white p-7 shadow-card sm:p-8">
+            <div class="feature-icon mb-5 text-brand">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l6-16 4 10 3-6 5 12" stroke-linejoin="round"/></svg>
             </div>
-            <h3 class="mb-2 text-base font-semibold text-ink">Parcours</h3>
-            <p class="text-[13px] leading-relaxed text-muted">Nos spots, événements et outils composés en itinéraires prêts à vivre, pour une soirée, une journée ou un week-end entier avec un nouveau parcours mis à l'honneur chaque semaine.</p>
+            <h3 class="mb-3 text-lg font-semibold text-ink sm:text-xl">Parcours</h3>
+            <p class="text-[15px] leading-relaxed text-muted">Nos spots, événements et outils composés en itinéraires prêts à vivre, pour une soirée, une journée ou un week-end — avec un nouveau parcours mis à l'honneur chaque semaine.</p>
           </div>
-          <div class="rounded-2xl border border-line bg-white p-6 shadow-card">
-            <div class="feature-icon mb-4 text-brand">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 1 1.4 0l1.6 1.6a1 1 0 0 1 0 1.4L9.5 17.5 5 19l1.5-4.5L14.7 6.3Z"/><path d="M13 8l3 3"/></svg>
+          <div class="rounded-2xl border border-line bg-white p-7 shadow-card sm:p-8">
+            <div class="feature-icon mb-5 text-brand">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 1 1.4 0l1.6 1.6a1 1 0 0 1 0 1.4L9.5 17.5 5 19l1.5-4.5L14.7 6.3Z"/><path d="M13 8l3 3"/></svg>
             </div>
-            <h3 class="mb-2 text-base font-semibold text-ink">Outils</h3>
-            <p class="text-[13px] leading-relaxed text-muted">Des outils choisis avec la même exigence que nos spots et nos événements, pour simplifier une journée à Conakry là où ça compte vraiment.</p>
+            <h3 class="mb-3 text-lg font-semibold text-ink sm:text-xl">Outils</h3>
+            <p class="text-[15px] leading-relaxed text-muted">Des outils choisis avec la même exigence que nos spots et nos événements, pour simplifier une journée à Conakry là où ça compte vraiment.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="section-a py-20">
-      <div class="mx-auto max-w-3xl px-4">
-        <h2 class="mb-12 text-center font-serif text-3xl font-medium text-ink">Questions fréquentes</h2>
-        <div class="space-y-4">
-          <details class="group rounded-xl border border-line bg-white p-6" open>
-            <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-ink">
+    <section id="faq" class="section-a py-16 sm:py-20">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6">
+        <h2 class="mb-8 text-center font-serif text-3xl font-medium text-ink sm:mb-12 sm:text-4xl">Foire aux questions</h2>
+        <div class="space-y-3 sm:space-y-4">
+          <details class="group rounded-xl border border-line bg-white p-4 sm:p-6" open>
+            <summary class="flex cursor-pointer list-none items-start justify-between gap-3 text-[15px] font-semibold leading-snug text-ink sm:items-center sm:text-base">
               Quand aura lieu le lancement officiel ?
-              <span class="text-brand transition-transform group-open:rotate-180">⌄</span>
+              <span class="mt-0.5 shrink-0 text-brand transition-transform group-open:rotate-180">⌄</span>
             </summary>
-            <p class="mt-4 text-sm leading-relaxed text-body">
+            <p class="mt-3 text-sm leading-relaxed text-body sm:mt-4">
               Le lancement officiel de THE LOOP est prévu pour décembre 2026 à Conakry. Les membres inscrits sur la liste d'attente recevront un accès anticipé à la bêta.
             </p>
           </details>
-          <details class="group rounded-xl border border-line bg-white p-6">
-            <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-ink">
+          <details class="group rounded-xl border border-line bg-white p-4 sm:p-6">
+            <summary class="flex cursor-pointer list-none items-start justify-between gap-3 text-[15px] font-semibold leading-snug text-ink sm:items-center sm:text-base">
               L'inscription sur la liste d'attente est-elle payante ?
-              <span class="text-brand transition-transform group-open:rotate-180">⌄</span>
+              <span class="mt-0.5 shrink-0 text-brand transition-transform group-open:rotate-180">⌄</span>
             </summary>
-            <p class="mt-4 text-sm leading-relaxed text-body">
+            <p class="mt-3 text-sm leading-relaxed text-body sm:mt-4">
               Non, elle est entièrement gratuite et vous garantit des avantages exclusifs au moment du lancement.
             </p>
           </details>
-          <details class="group rounded-xl border border-line bg-white p-6">
-            <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-ink">
+          <details class="group rounded-xl border border-line bg-white p-4 sm:p-6">
+            <summary class="flex cursor-pointer list-none items-start justify-between gap-3 text-[15px] font-semibold leading-snug text-ink sm:items-center sm:text-base">
               Comment les adresses et événements sont-ils choisis ?
-              <span class="text-brand transition-transform group-open:rotate-180">⌄</span>
+              <span class="mt-0.5 shrink-0 text-brand transition-transform group-open:rotate-180">⌄</span>
             </summary>
-            <p class="mt-4 text-sm leading-relaxed text-body">
+            <p class="mt-3 text-sm leading-relaxed text-body sm:mt-4">
               Chaque spot, chaque événement et chaque outil est passé au crible avant de rejoindre l'application. Nous écartons volontairement ce qui fait déjà du bruit ou attire la foule par simple effet de masse, pour ne garder que ce qui, selon nous, vaut vraiment votre temps.
             </p>
           </details>
-          <details class="group rounded-xl border border-line bg-white p-6">
-            <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-ink">
+          <details class="group rounded-xl border border-line bg-white p-4 sm:p-6">
+            <summary class="flex cursor-pointer list-none items-start justify-between gap-3 text-[15px] font-semibold leading-snug text-ink sm:items-center sm:text-base">
               Je vis à l'étranger, THE LOOP me sera-t-il utile ?
-              <span class="text-brand transition-transform group-open:rotate-180">⌄</span>
+              <span class="mt-0.5 shrink-0 text-brand transition-transform group-open:rotate-180">⌄</span>
             </summary>
-            <p class="mt-4 text-sm leading-relaxed text-body">
+            <p class="mt-3 text-sm leading-relaxed text-body sm:mt-4">
               Oui, et plus qu'on ne le pense. De nombreux membres de la diaspora s'en servent pour préparer un séjour à Conakry avant même d'avoir posé le pied en ville, et pour garder un œil sur ce qui s'y passe entre deux visites.
             </p>
           </details>
@@ -224,7 +328,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-line bg-white/80 py-12 text-center text-sm text-muted">
+  <footer class="border-t border-line bg-white/80 py-12 pb-[max(3rem,env(safe-area-inset-bottom))] text-center text-sm text-muted">
     <div class="mx-auto max-w-7xl px-4">
       <p class="mb-2 flex items-center justify-center gap-2.5 font-semibold uppercase tracking-[0.2em] text-ink">
         <svg class="shrink-0" width="18" height="18" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -235,24 +339,77 @@
         The Loop
       </p>
       <p class="mb-3">© 2026 THE LOOP. Tous droits réservés. Conakry, Guinée.</p>
-      <div class="mb-5 flex flex-col items-center gap-1.5 text-xs text-muted sm:flex-row sm:justify-center sm:gap-4">
+      <div class="mb-8 flex flex-col items-center gap-2.5 text-sm text-muted sm:flex-row sm:justify-center sm:gap-4 sm:text-xs">
         <a href="https://www.theloop-app.com/" class="hover:text-brand">www.theloop-app.com</a>
         <span class="hidden sm:inline">·</span>
         <a href="mailto:theloop.contact@gmail.com" class="hover:text-brand">theloop.contact@gmail.com</a>
         <span class="hidden sm:inline">·</span>
         <a href="tel:+224626680606" class="hover:text-brand">+224 626 68 06 06</a>
       </div>
-      <div class="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-muted">
-        <a href="/mentions" class="hover:text-brand">Mentions légales</a>
-        <span aria-hidden="true">·</span>
-        <a href="/privacy" class="hover:text-brand">Confidentialité</a>
-        <span aria-hidden="true">·</span>
-        <a href="/cgu" class="hover:text-brand">CGU</a>
-        <span aria-hidden="true">·</span>
-        <a href="/suppression" class="hover:text-brand">Suppression de compte</a>
+
+      <div class="mx-auto max-w-2xl rounded-2xl border border-line bg-paper/80 px-5 py-6 sm:px-8">
+        <p class="mb-1 text-xs font-semibold uppercase tracking-[0.16em] text-brand">Documents légaux</p>
+        <p class="mb-4 text-xs text-muted sm:text-[13px]">
+          Pages publiques pour l'application et les stores (Privacy Policy, Terms, Account Deletion).
+        </p>
+        <div class="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-5 sm:gap-y-2">
+          <a href="https://www.theloop-app.com/privacy" class="min-h-[44px] inline-flex items-center justify-center rounded-xl border border-line bg-white px-4 text-sm font-medium text-ink transition hover:border-brand/30 hover:text-brand">
+            Confidentialité
+          </a>
+          <a href="https://www.theloop-app.com/cgu" class="min-h-[44px] inline-flex items-center justify-center rounded-xl border border-line bg-white px-4 text-sm font-medium text-ink transition hover:border-brand/30 hover:text-brand">
+            CGU
+          </a>
+          <a href="https://www.theloop-app.com/mentions" class="min-h-[44px] inline-flex items-center justify-center rounded-xl border border-line bg-white px-4 text-sm font-medium text-ink transition hover:border-brand/30 hover:text-brand">
+            Mentions légales
+          </a>
+          <a href="https://www.theloop-app.com/suppression" class="min-h-[44px] inline-flex items-center justify-center rounded-xl border border-line bg-white px-4 text-sm font-medium text-ink transition hover:border-brand/30 hover:text-brand">
+            Suppression de compte
+          </a>
+        </div>
       </div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById("menu-toggle");
+      var panel = document.getElementById("mobile-panel");
+      if (!toggle || !panel) return;
+
+      function setOpen(open) {
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+        document.body.classList.toggle("menu-open", open);
+        if (open) {
+          panel.removeAttribute("hidden");
+          requestAnimationFrame(function () {
+            panel.classList.add("is-open");
+          });
+        } else {
+          panel.classList.remove("is-open");
+          window.setTimeout(function () {
+            if (!panel.classList.contains("is-open")) panel.setAttribute("hidden", "");
+          }, 320);
+        }
+      }
+
+      toggle.addEventListener("click", function () {
+        setOpen(toggle.getAttribute("aria-expanded") !== "true");
+      });
+
+      panel.querySelectorAll(".mobile-link").forEach(function (link) {
+        link.addEventListener("click", function () { setOpen(false); });
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") setOpen(false);
+      });
+
+      window.addEventListener("resize", function () {
+        if (window.matchMedia("(min-width: 768px)").matches) setOpen(false);
+      });
+    })();
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
