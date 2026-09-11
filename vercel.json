@@ -22,6 +22,8 @@
     { "source": "/terms-of-service", "destination": "/cgu", "permanent": true },
     { "source": "/mentions-legales", "destination": "/mentions", "permanent": true },
     { "source": "/delete-account", "destination": "/suppression", "permanent": true },
-    { "source": "/account-deletion", "destination": "/suppression", "permanent": true }
+    { "source": "/account-deletion", "destination": "/suppression", "permanent": true },
+    { "source": "/theloop-pass", "destination": "/pass", "permanent": true },
+    { "source": "/espace-pro", "destination": "/pass", "permanent": true }
   ]
 }

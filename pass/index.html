@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>THE LOOP Pass — Cartes de fidélité &amp; cartes cadeaux à Conakry</title>
+  <meta name="description" content="THE LOOP Pass : cartes de fidélité et cartes cadeaux 100 % smartphone (Apple / Google Wallet) pour salons, instituts et boutiques à Conakry." />
+  <link rel="canonical" href="https://www.theloop-app.com/pass" />
+  <meta name="theme-color" content="#0A6575" />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:url" content="https://www.theloop-app.com/pass" />
+  <meta property="og:site_name" content="THE LOOP" />
+  <meta property="og:title" content="THE LOOP Pass — Fidélisation digitale à Conakry" />
+  <meta property="og:description" content="Cartes de fidélité et cartes cadeaux sur smartphone pour les commerces de Conakry. Fini les fichiers Excel." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="THE LOOP Pass — Conakry" />
+  <meta name="twitter:description" content="Fidélisez votre clientèle avec des cartes Wallet sur smartphone." />
+  <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: "#0A6575", dark: "#074955", light: "#12A8BC" },
+            paper: "#F7FAFB",
+            ink: "#0E2A30",
+            body: "#33474C",
+            muted: "#64787D",
+            line: "#DCE7E9"
+          },
+          fontFamily: {
+            serif: ['"Fraunces"', "Georgia", "serif"],
+            sans: ['"Inter"', "system-ui", "sans-serif"]
+          },
+          boxShadow: { card: "0 10px 28px rgba(14, 42, 48, 0.07)" }
+        }
+      }
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body.menu-open { overflow: hidden; }
+    #mobile-panel {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      pointer-events: none;
+      transition: max-height 0.32s ease, opacity 0.22s ease;
+    }
+    #mobile-panel.is-open {
+      max-height: 32rem;
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .menu-icon-close { display: none; }
+    #menu-toggle[aria-expanded="true"] .menu-icon-open { display: none; }
+    #menu-toggle[aria-expanded="true"] .menu-icon-close { display: block; }
+    @media (min-width: 768px) {
+      #mobile-panel, #mobile-panel.is-open {
+        max-height: 0 !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+    }
+
+    .phone-float {
+      animation: phone-float 5.5s ease-in-out infinite;
+    }
+    @keyframes phone-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.is-in { opacity: 1; transform: none; }
+
+    .wallet-pass {
+      background:
+        linear-gradient(145deg, #0A6575 0%, #074955 48%, #0E2A30 100%);
+      box-shadow: 0 18px 40px rgba(14, 42, 48, 0.28);
+    }
+    .wallet-sheen {
+      background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,0.14) 50%, transparent 65%);
+    }
+  </style>
+</head>
+<body class="font-sans text-ink antialiased selection:bg-brand selection:text-white">
+
+  <header class="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur-xl">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8 sm:h-20">
+      <a href="/" class="logo-h flex min-w-0 items-center gap-2.5" aria-label="THE LOOP — Accueil">
+        <svg class="shrink-0" width="34" height="34" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="18" cy="18" r="15" stroke="#0E2A30" stroke-width="3"/>
+          <path d="M 13.5 10.21 A 9 9 0 1 1 13.5 25.79" stroke="#0E2A30" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="10" cy="18" r="2" fill="#0E2A30"/>
+        </svg>
+        <span class="wm text-[14px] font-semibold uppercase leading-none tracking-[0.2em] text-ink sm:text-base">The Loop</span>
+      </a>
+
+      <nav class="hidden items-center gap-8 text-sm font-medium text-body md:flex" aria-label="Navigation principale">
+        <a href="/#concept" class="transition-colors hover:text-brand">Le concept</a>
+        <a href="/#features" class="transition-colors hover:text-brand">Expériences</a>
+        <a href="/#faq" class="transition-colors hover:text-brand">FAQ</a>
+        <a href="/pass" class="font-semibold text-brand" aria-current="page">Espace Pro</a>
+      </nav>
+
+      <div class="hidden md:block">
+        <a
+          href="https://wa.me/224626680606?text=Bonjour%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20TheLoop%20Pass."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-card transition hover:bg-brand-dark"
+        >
+          Discuter sur WhatsApp
+        </a>
+      </div>
+
+      <button
+        id="menu-toggle"
+        type="button"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-white text-ink shadow-sm transition hover:border-brand/30 hover:text-brand md:hidden"
+        aria-controls="mobile-panel"
+        aria-expanded="false"
+        aria-label="Ouvrir le menu"
+      >
+        <svg class="menu-icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="menu-icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-panel" class="border-t border-line bg-paper md:hidden" hidden>
+      <nav class="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6" aria-label="Navigation mobile">
+        <a href="/#concept" class="mobile-link rounded-xl px-4 py-3.5 text-base font-medium text-ink transition hover:bg-brand/10 hover:text-brand">Le concept</a>
+        <a href="/#features" class="mobile-link rounded-xl px-4 py-3.5 text-base font-medium text-ink transition hover:bg-brand/10 hover:text-brand">Expériences</a>
+        <a href="/#faq" class="mobile-link rounded-xl px-4 py-3.5 text-base font-medium text-ink transition hover:bg-brand/10 hover:text-brand">FAQ</a>
+        <a href="/pass" class="mobile-link rounded-xl px-4 py-3.5 text-base font-semibold text-brand transition hover:bg-brand/10" aria-current="page">Espace Pro</a>
+        <a
+          href="https://wa.me/224626680606?text=Bonjour%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20TheLoop%20Pass."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mobile-link mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-4 py-3.5 text-base font-semibold text-white shadow-card transition hover:bg-brand-dark"
+        >
+          Discuter sur WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="section-a relative overflow-hidden px-4 pb-16 pt-12 sm:px-6 sm:pb-20 sm:pt-16 lg:px-8">
+      <div class="relative z-10 mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+        <div class="text-center lg:text-left">
+          <p class="eyebrow mb-4 text-lg text-brand sm:text-xl">THE LOOP Pass</p>
+          <h1 class="mb-5 font-serif text-[2rem] font-medium leading-[1.14] tracking-tight text-ink sm:text-5xl lg:text-[3.1rem] lg:leading-[1.12]">
+            Fidéliser la clientèle et booster le chiffre d'affaires des commerces à Conakry.
+          </h1>
+          <p class="mx-auto mb-8 max-w-xl text-[15px] leading-relaxed text-body sm:text-lg lg:mx-0">
+            La solution moderne de cartes de fidélité et cartes cadeaux sur smartphone — fini les fichiers Excel obsolètes.
+          </p>
+          <div class="flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
+            <a
+              href="https://wa.me/224626680606?text=Bonjour%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20TheLoop%20Pass."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex min-h-[48px] w-full items-center justify-center gap-2.5 rounded-xl bg-brand px-6 py-3.5 text-sm font-semibold text-white shadow-card transition hover:bg-brand-dark sm:w-auto"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.85 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Discuter sur WhatsApp
+            </a>
+            <a href="#avantages" class="inline-flex min-h-[48px] w-full items-center justify-center rounded-xl border border-line bg-white px-6 py-3.5 text-sm font-semibold text-ink transition hover:border-brand/30 hover:text-brand sm:w-auto">
+              Voir les avantages
+            </a>
+          </div>
+          <p class="mt-4 text-xs text-muted sm:text-[13px]">
+            Apple Wallet · Google Wallet · QR code d'inscription
+          </p>
+        </div>
+
+        <!-- Mockup iPhone + carte Wallet -->
+        <div class="reveal mx-auto w-full max-w-[280px] lg:max-w-[300px]" aria-hidden="true">
+          <div class="phone-float relative mx-auto">
+            <div class="relative overflow-hidden rounded-[2.35rem] border-[3px] border-ink/90 bg-[#F2F5F6] shadow-[0_28px_60px_rgba(14,42,48,0.22)]">
+              <div class="absolute left-1/2 top-0 z-20 h-6 w-28 -translate-x-1/2 rounded-b-2xl bg-ink/90"></div>
+              <div class="px-4 pb-6 pt-10">
+                <p class="mb-1 text-center text-[10px] font-medium uppercase tracking-[0.18em] text-muted">Wallet</p>
+                <p class="mb-4 text-center text-sm font-semibold text-ink">Passes</p>
+
+                <div class="wallet-pass relative overflow-hidden rounded-2xl p-4 text-white">
+                  <div class="wallet-sheen pointer-events-none absolute inset-0"></div>
+                  <div class="relative flex items-start justify-between gap-3">
+                    <div>
+                      <p class="text-[10px] font-medium uppercase tracking-[0.16em] text-white/70">THE LOOP Pass</p>
+                      <p class="mt-1 font-serif text-lg font-medium leading-tight">Carte Fidélité</p>
+                    </div>
+                    <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+                      <circle cx="18" cy="18" r="15" stroke="white" stroke-width="2.5"/>
+                      <path d="M 13.5 10.21 A 9 9 0 1 1 13.5 25.79" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                      <circle cx="10" cy="18" r="2" fill="white"/>
+                    </svg>
+                  </div>
+                  <div class="relative mt-8 flex items-end justify-between">
+                    <div>
+                      <p class="text-[10px] uppercase tracking-wider text-white/60">Points</p>
+                      <p class="text-2xl font-semibold tabular-nums">7 / 10</p>
+                    </div>
+                    <div class="text-right">
+                      <p class="text-[10px] uppercase tracking-wider text-white/60">Salon</p>
+                      <p class="text-sm font-medium">Conakry</p>
+                    </div>
+                  </div>
+                  <div class="relative mt-4 flex gap-1.5">
+                    <span class="h-2 w-2 rounded-full bg-brand-light"></span>
+                    <span class="h-2 w-2 rounded-full bg-brand-light"></span>
+                    <span class="h-2 w-2 rounded-full bg-brand-light"></span>
+                    <span class="h-2 w-2 rounded-full bg-brand-light"></span>
+                    <span class="h-2 w-2 rounded-full bg-brand-light"></span>
+                    <span class="h-2 w-2 rounded-full bg-brand-light"></span>
+                    <span class="h-2 w-2 rounded-full bg-brand-light"></span>
+                    <span class="h-2 w-2 rounded-full bg-white/25"></span>
+                    <span class="h-2 w-2 rounded-full bg-white/25"></span>
+                    <span class="h-2 w-2 rounded-full bg-white/25"></span>
+                  </div>
+                </div>
+
+                <div class="mt-3 rounded-2xl border border-line bg-white px-4 py-3 shadow-sm">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <p class="text-[10px] font-medium uppercase tracking-[0.14em] text-muted">Carte cadeau</p>
+                      <p class="text-sm font-semibold text-ink">500&nbsp;000 GNF</p>
+                    </div>
+                    <span class="rounded-full bg-brand/10 px-2.5 py-1 text-[10px] font-semibold text-brand">Active</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Avantages -->
+    <section id="avantages" class="section-b py-16 sm:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto mb-12 max-w-2xl text-center sm:mb-14">
+          <p class="eyebrow mb-3 text-xl text-brand sm:text-2xl">Pour les commerces</p>
+          <h2 class="font-serif text-3xl font-medium text-ink sm:text-4xl">
+            Pourquoi digitaliser votre relation client&nbsp;?
+          </h2>
+        </div>
+
+        <div class="grid gap-5 sm:grid-cols-2 lg:gap-6">
+          <article class="reveal rounded-2xl border border-line bg-white p-6 shadow-card sm:p-7">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-brand/10 text-brand">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 12c2.5-4 5.5-6 8-6s5.5 2 8 6c-2.5 4-5.5 6-8 6s-5.5-2-8-6Z" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="12" cy="12" r="2.2" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+            </div>
+            <h3 class="mb-2 text-lg font-semibold text-ink">Créer de la récurrence</h3>
+            <p class="text-[15px] leading-relaxed text-body">
+              Faites revenir vos clients plus souvent grâce à une carte de fidélité toujours dans leur téléphone.
+            </p>
+          </article>
+
+          <article class="reveal rounded-2xl border border-line bg-white p-6 shadow-card sm:p-7">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-brand/10 text-brand">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 7h16v12H4V7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M8 7V5.5A2.5 2.5 0 0 1 10.5 3h3A2.5 2.5 0 0 1 16 5.5V7" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+            </div>
+            <h3 class="mb-2 text-lg font-semibold text-ink">Base de données client fiable</h3>
+            <p class="text-[15px] leading-relaxed text-body">
+              Fini les carnets de notes égarés : vos clients s'inscrivent eux-mêmes via un QR code.
+            </p>
+          </article>
+
+          <article class="reveal rounded-2xl border border-line bg-white p-6 shadow-card sm:p-7">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-brand/10 text-brand">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M3 10h18" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+            </div>
+            <h3 class="mb-2 text-lg font-semibold text-ink">Cartes cadeaux prépayées</h3>
+            <p class="text-[15px] leading-relaxed text-body">
+              Sécurisez du cash immédiat — idéal pour les fêtes, événements et offres d'entreprise.
+            </p>
+          </article>
+
+          <article class="reveal rounded-2xl border border-line bg-white p-6 shadow-card sm:p-7">
+            <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-brand/10 text-brand">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3v2M6.2 6.2l1.4 1.4M3 12h2M6.2 17.8l1.4-1.4M12 19v2M16.4 16.4l1.4 1.4M19 12h2M16.4 7.6l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+            </div>
+            <h3 class="mb-2 text-lg font-semibold text-ink">Notifications push</h3>
+            <p class="text-[15px] leading-relaxed text-body">
+              Relancez vos clients sur leur téléphone, ou gérez les points à distance même s'ils envoient un proche.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Réassurance + CTA final -->
+    <section class="section-a px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <div class="reveal mx-auto max-w-3xl text-center">
+        <p class="eyebrow mb-4 text-lg text-brand sm:text-xl">Déjà en place à Conakry</p>
+        <h2 class="mb-4 font-serif text-3xl font-medium text-ink sm:text-4xl">
+          Adopté par des partenaires de référence
+        </h2>
+        <p class="mx-auto mb-8 max-w-xl text-[15px] leading-relaxed text-body sm:text-base">
+          Salons, instituts de beauté et boutiques font déjà confiance à THE LOOP Pass pour moderniser leur relation client — sans papier, sans Excel.
+        </p>
+        <a
+          href="https://wa.me/224626680606?text=Bonjour%2C%20je%20souhaite%20prendre%20rendez-vous%20pour%20TheLoop%20Pass."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex min-h-[48px] w-full items-center justify-center gap-2.5 rounded-xl bg-brand px-7 py-3.5 text-sm font-semibold text-white shadow-card transition hover:bg-brand-dark sm:w-auto"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.85 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Prendre rendez-vous sur WhatsApp
+        </a>
+        <p class="mt-4 text-sm text-muted">
+          <a href="tel:+224626680606" class="hover:text-brand">+224 626 68 06 06</a>
+          ·
+          <a href="mailto:theloop.contact@gmail.com" class="hover:text-brand">theloop.contact@gmail.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-line bg-white/80 py-12 pb-[max(3rem,env(safe-area-inset-bottom))] text-center text-sm text-muted">
+    <div class="mx-auto max-w-7xl px-4">
+      <p class="mb-2 flex items-center justify-center gap-2.5 font-semibold uppercase tracking-[0.2em] text-ink">
+        <svg class="shrink-0" width="18" height="18" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="18" cy="18" r="15" stroke="#0E2A30" stroke-width="3"/>
+          <path d="M 13.5 10.21 A 9 9 0 1 1 13.5 25.79" stroke="#0E2A30" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="10" cy="18" r="2" fill="#0E2A30"/>
+        </svg>
+        The Loop
+      </p>
+      <p class="mb-3">© 2026 THE LOOP. Tous droits réservés. Conakry, Guinée.</p>
+      <div class="mb-5 flex flex-col items-center gap-2.5 text-sm text-muted sm:flex-row sm:justify-center sm:gap-4 sm:text-xs">
+        <a href="https://www.theloop-app.com/" class="hover:text-brand">www.theloop-app.com</a>
+        <span class="hidden sm:inline">·</span>
+        <a href="mailto:theloop.contact@gmail.com" class="hover:text-brand">theloop.contact@gmail.com</a>
+        <span class="hidden sm:inline">·</span>
+        <a href="tel:+224626680606" class="hover:text-brand">+224 626 68 06 06</a>
+      </div>
+      <nav class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-[12px] text-muted/90 sm:gap-x-4" aria-label="Documents légaux">
+        <a href="https://www.theloop-app.com/mentions" class="transition hover:text-brand">Mentions légales</a>
+        <span class="text-line" aria-hidden="true">·</span>
+        <a href="https://www.theloop-app.com/privacy" class="transition hover:text-brand">Confidentialité</a>
+        <span class="text-line" aria-hidden="true">·</span>
+        <a href="https://www.theloop-app.com/cgu" class="transition hover:text-brand">CGU</a>
+        <span class="text-line" aria-hidden="true">·</span>
+        <a href="https://www.theloop-app.com/suppression" class="transition hover:text-brand">Suppression de compte</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById("menu-toggle");
+      var panel = document.getElementById("mobile-panel");
+      if (toggle && panel) {
+        function setOpen(open) {
+          toggle.setAttribute("aria-expanded", open ? "true" : "false");
+          toggle.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+          document.body.classList.toggle("menu-open", open);
+          if (open) {
+            panel.removeAttribute("hidden");
+            requestAnimationFrame(function () { panel.classList.add("is-open"); });
+          } else {
+            panel.classList.remove("is-open");
+            window.setTimeout(function () {
+              if (!panel.classList.contains("is-open")) panel.setAttribute("hidden", "");
+            }, 320);
+          }
+        }
+        toggle.addEventListener("click", function () {
+          setOpen(toggle.getAttribute("aria-expanded") !== "true");
+        });
+        panel.querySelectorAll(".mobile-link").forEach(function (link) {
+          link.addEventListener("click", function () { setOpen(false); });
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") setOpen(false);
+        });
+        window.addEventListener("resize", function () {
+          if (window.matchMedia("(min-width: 768px)").matches) setOpen(false);
+        });
+      }
+
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-in");
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+      } else {
+        document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("is-in"); });
+      }
+    })();
+  </script>
+</body>
+</html>
