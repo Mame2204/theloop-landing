@@ -1,0 +1,7 @@
+{
+  "name": "theloop-landing",
+  "private": true,
+  "dependencies": {
+    "@vercel/edge": "^1.2.1"
+  }
+}

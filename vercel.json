@@ -69,12 +69,5 @@
     { "source": "/mentions-legales", "destination": "/mentions", "permanent": true },
     { "source": "/delete-account", "destination": "/suppression", "permanent": true },
     { "source": "/account-deletion", "destination": "/suppression", "permanent": true }
-  ],
-  "rewrites": [
-    {
-      "source": "/",
-      "has": [{ "type": "host", "value": "pass.theloop-app.com" }],
-      "destination": "/pass/index.html"
-    }
   ]
 }

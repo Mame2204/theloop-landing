@@ -22,8 +22,10 @@ Ajouter un enregistrement pour le sous-domaine, pointé vers Vercel :
 2. Ajouter `pass.theloop-app.com`
 3. Valider le DNS, attendre le certificat HTTPS
 
-Le `vercel.json` du repo :
+Le `vercel.json` + `middleware.js` du repo :
 
-- sert la landing Pass sur l’hôte `pass.theloop-app.com`
+- sur l’hôte `pass.theloop-app.com`, la racine `/` affiche la landing Pass
 - redirige `theloop-app.com/pass` et `www…/pass` vers `https://pass.theloop-app.com/`
 - aucune UI ni lien croisé entre les deux vitrines
+
+> Note : un simple `rewrite` dans `vercel.json` ne suffit pas, car Vercel sert d’abord `index.html` à la racine. Le middleware Edge force le bon contenu pour le sous-domaine.
