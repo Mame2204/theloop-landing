@@ -13,6 +13,52 @@
     }
   ],
   "redirects": [
+    {
+      "source": "/pass",
+      "has": [{ "type": "host", "value": "www.theloop-app.com" }],
+      "destination": "https://pass.theloop-app.com/",
+      "permanent": true
+    },
+    {
+      "source": "/pass/",
+      "has": [{ "type": "host", "value": "www.theloop-app.com" }],
+      "destination": "https://pass.theloop-app.com/",
+      "permanent": true
+    },
+    {
+      "source": "/pass/:path*",
+      "has": [{ "type": "host", "value": "www.theloop-app.com" }],
+      "destination": "https://pass.theloop-app.com/",
+      "permanent": true
+    },
+    {
+      "source": "/pass",
+      "has": [{ "type": "host", "value": "theloop-app.com" }],
+      "destination": "https://pass.theloop-app.com/",
+      "permanent": true
+    },
+    {
+      "source": "/pass/",
+      "has": [{ "type": "host", "value": "theloop-app.com" }],
+      "destination": "https://pass.theloop-app.com/",
+      "permanent": true
+    },
+    {
+      "source": "/pass/:path*",
+      "has": [{ "type": "host", "value": "theloop-app.com" }],
+      "destination": "https://pass.theloop-app.com/",
+      "permanent": true
+    },
+    {
+      "source": "/theloop-pass",
+      "destination": "https://pass.theloop-app.com/",
+      "permanent": true
+    },
+    {
+      "source": "/espace-pro",
+      "destination": "https://pass.theloop-app.com/",
+      "permanent": true
+    },
     { "source": "/confidentialite", "destination": "/privacy", "permanent": true },
     { "source": "/politique-de-confidentialite", "destination": "/privacy", "permanent": true },
     { "source": "/politique-confidentialite", "destination": "/privacy", "permanent": true },
@@ -22,8 +68,13 @@
     { "source": "/terms-of-service", "destination": "/cgu", "permanent": true },
     { "source": "/mentions-legales", "destination": "/mentions", "permanent": true },
     { "source": "/delete-account", "destination": "/suppression", "permanent": true },
-    { "source": "/account-deletion", "destination": "/suppression", "permanent": true },
-    { "source": "/theloop-pass", "destination": "/pass", "permanent": true },
-    { "source": "/espace-pro", "destination": "/pass", "permanent": true }
+    { "source": "/account-deletion", "destination": "/suppression", "permanent": true }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "pass.theloop-app.com" }],
+      "destination": "/pass/index.html"
+    }
   ]
 }
