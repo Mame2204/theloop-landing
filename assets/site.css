@@ -14,8 +14,10 @@ body {
   line-height: 1.8;
 }
 .legal-prose p + p { margin-top: 1.1rem; }
+.legal-prose strong { color: #0E2A30; font-weight: 600; }
 .legal-prose a { color: #0A6575; text-decoration: underline; text-underline-offset: 2px; }
 .legal-prose a:hover { color: #074955; }
+#legal-body[aria-busy="true"] { opacity: 0.75; }
 .msg-ok { color: #0A6575; }
 .msg-err { color: #B91C1C; }
 .eyebrow {

@@ -68,6 +68,11 @@
     { "source": "/terms-of-service", "destination": "/cgu", "permanent": true },
     { "source": "/mentions-legales", "destination": "/mentions", "permanent": true },
     { "source": "/delete-account", "destination": "/suppression", "permanent": true },
-    { "source": "/account-deletion", "destination": "/suppression", "permanent": true }
+    { "source": "/account-deletion", "destination": "/suppression", "permanent": true },
+    { "source": "/cookies-policy", "destination": "/cookies", "permanent": true },
+    { "source": "/politique-cookies", "destination": "/cookies", "permanent": true },
+    { "source": "/pass-prime-conditions", "destination": "/pass-prime", "permanent": true },
+    { "source": "/conditions-pass-prime", "destination": "/pass-prime", "permanent": true },
+    { "source": "/partner-terms", "destination": "/partenaires", "permanent": true }
   ]
 }

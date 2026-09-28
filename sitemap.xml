@@ -21,6 +21,21 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.theloop-app.com/pass-prime</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.theloop-app.com/cookies</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.theloop-app.com/partenaires</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.theloop-app.com/suppression</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
