@@ -73,6 +73,12 @@
     { "source": "/politique-cookies", "destination": "/cookies", "permanent": true },
     { "source": "/pass-prime-conditions", "destination": "/pass-prime", "permanent": true },
     { "source": "/conditions-pass-prime", "destination": "/pass-prime", "permanent": true },
-    { "source": "/partner-terms", "destination": "/partenaires", "permanent": true }
+    { "source": "/partner-terms", "destination": "/partenaires", "permanent": true },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "theloop-app.com" }],
+      "destination": "https://www.theloop-app.com/:path*",
+      "permanent": true
+    }
   ]
 }
